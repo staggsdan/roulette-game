@@ -1,3 +1,5 @@
+
+
 var targetNumber = "";
 const activeBets = [];
 const playerMoney = "";

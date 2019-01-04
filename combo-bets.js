@@ -39,22 +39,21 @@ var streets = {
 }
 
 var doubleStreets = {
-    double1: [streets.streetA, streets.streetB],
-    double2: [streets.streetB, streets.streetC],
-    double3: [streets.streetC, streets.streetD],
-    double4: [streets.streetD, streets.streetE],
-    double5: [streets.streetE, streets.streetF],
-    double6: [streets.streetF, streets.streetG],
-    double7: [streets.streetG, streets.streetH], 
-    double8: [streets.streetH, streets.streetI], 
-    double9: [streets.streetI, streets.streetJ],
-    double10: [streets.streetJ, streets.streetK],
-    double11: [streets.streetK, streets.streetL]
+    double1: [1, 2, 3, 4, 5, 6],
+    double2: [4, 5, 6, 7, 8, 9],
+    double3: [7, 8, 9, 10, 11, 12],
+    double4: [10, 11, 12, 13, 14, 15],
+    double5: [13, 14, 15, 16, 17, 18],
+    double6: [16, 17, 18, 19, 20, 21],
+    double7: [19, 20, 21, 22, 23, 24], 
+    double8: [22, 23, 24, 25, 26, 27], 
+    double9: [25, 26, 27, 28, 29, 30],
+    double10: [28, 29, 30, 31, 32, 33],
+    double11: [31, 32, 33, 34, 35, 36]
 }
 
 var basket = [0, 1, 2, 3, 37]
 
-// splits are sequenced first vertical and then horizontal
 var splits = {
     vertical: 
     {
@@ -70,7 +69,45 @@ var splits = {
     
 }
 
+var corners = [
+    [1, 2, 4, 5], [2, 3, 5, 6], [4, 5, 7, 8], [5, 6, 8, 9], 
+    [7, 8, 10, 11], [8, 9, 11, 12], [10, 11, 13, 14], [11, 12, 14, 15], 
+    [13, 14, 16, 17], [14, 15, 17, 18], [16, 17, 19, 20], [17, 18, 20, 21], 
+    [19, 20, 22, 23], [20, 21, 23, 24], [22, 23, 25, 26], [23, 24, 26, 27],
+    [25, 26, 28, 29], [26, 27, 29, 30], [28, 29, 31, 32], [29, 30, 32, 33],
+    [31, 32, 34, 35], [32, 33, 35, 36]
+]
 
+
+// testing logic below this line and ALL can be deleted before final push
 
 console.log(splits.vertical.colB[5])
 console.log(splits.horizontal.lowStreets[3])
+console.log(corners[1]);
+
+
+var croupier = {
+    value: 5,
+    isRed: true,
+    isEven: false,
+    isZero: false
+}
+
+
+
+console.log(doubleStreets.double1);
+
+
+if (doubleStreets.double1.indexOf(croupier.value) > -1){
+    console.log("win 5:1");
+} else {
+    console.log("lose");
+} 
+
+
+if (croupier.isRed == true && croupier.isZero == false) {
+    console.log("win 1:1");
+    // function to pay out winnings to player bank goes here
+    } else {
+        console.log("lose");
+    }
